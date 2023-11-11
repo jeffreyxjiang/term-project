@@ -11,14 +11,13 @@ Our stretch goal is being able to create multiple algorithms, so that the user c
 
  
 
-# Learning Objectives: Since this is a team project, you may want to articulate both shared and individual learning goals. 
-
+# Learning Objectives
  
 
 Because we both have a similar level of knowledge when it comes to this type of project, our shared goals are both our individual learning goals.  
  
 
-# Shared goals: 
+Shared goals: 
 
 Learn how to use API’s and analyze the data that we extract.  
 
@@ -47,29 +46,29 @@ We are not completely sure how to pull data and store data from the NBA basketba
 
 # Project Schedule
 
-# Week 1 
+Week 1 
 
 Experiment with and learn Basketball Reference API formatting and syntax 
 
-# Week 2 
+Week 2 
 
 Experiment with different data analysis libraries and their compatibility with the API.  
 
 Pick handful of best data analysis libraries 
 
-# Week 3 
+Week 3 
 
 Write pseudocode and determine weights for player stats.  
 
-# Week 4 
+Week 4 
 
 Convert pseudocode to Python.  
 
-# Week 5 
+Week 5 
 
 Integrate code to website 
 
-# Week 6 
+Week 6 
 
 Finish website and ensure everything works properly 
 
