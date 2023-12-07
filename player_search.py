@@ -67,14 +67,17 @@ def parse_html(html, player):
         # extract the name of the stat being added
         key = stats[0].strip('"')
 
-        # extract the number for the stat being added
-        value_text = stats[1].split("<")
-        value = value_text[0]
+        # extract the number for the stat being added, different for "Team" stat
+        if key == 'team_id':
+            value_text = stats[1].split('teams/')[1]
+            value = value_text.split('/')[0]
+        else:
+            value_text = stats[1].split("<")
+            value = value_text[0]
 
         stats_dict[key] = value
-    
+
     # remove irrelevant items
-    stats_dict.pop('team_id')
     stats_dict.pop('lg_id')
 
     return stats_dict
@@ -94,11 +97,12 @@ def player_stat_search(player):
             sleep(1)
 
 def main():
+    # enter any player's full name here
     guy = 'kristaps porzingis'
     
     stats = player_stat_search(guy)
 
-    # url = download_player_url(guy, '07')
+    # url = download_player_url(guy, '01')
     # stats = parse_html(download_page(url).read(), guy)
 
     print(stats)
