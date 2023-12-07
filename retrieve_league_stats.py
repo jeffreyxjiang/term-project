@@ -13,7 +13,7 @@ def download_page(url):
 
 def league_parse_html(html):
     """
-    Analyze the html page, find the information and return player stats from the 2022-23 season as a dictionary
+    Analyze the html page, find the information and return league stats from the 2022-23 season as a dictionary
     """
     soup = BeautifulSoup(html, features="html.parser")
     # print(soup.prettify())
