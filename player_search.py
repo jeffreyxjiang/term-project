@@ -1,7 +1,7 @@
 import urllib.request
 from bs4 import BeautifulSoup
 from time import sleep
-
+from unidecode import unidecode
 
 def download_player_url(player, playerindex):
     """"
@@ -47,7 +47,7 @@ def parse_html(html, player):
     # print(name)
     
     # double-check that returned name matches searched name
-    lower_name, lower_player = name.lower(), player.lower()
+    lower_name, lower_player = unidecode(name.lower()), unidecode(player.lower())
     if lower_name != lower_player:
         # print(lower_name, lower_player)
         raise AttributeError
@@ -91,11 +91,10 @@ def player_stat_search(player):
             stats = parse_html(download_page(url).read(), player)
             return stats
         except:
-            index += 1
             sleep(1)
 
 def main():
-    guy = 'ziaire williams'
+    guy = 'kristaps porzingis'
     
     stats = player_stat_search(guy)
 
