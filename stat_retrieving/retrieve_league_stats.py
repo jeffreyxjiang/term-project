@@ -25,16 +25,13 @@ def league_parse_html(html):
     for season in league_stats_table.find_all("tr"):
         if '2022-23' in str(season):
             for stat in season.find_all("td"):
-                stat = str(stat)
-                text = stat.split("data-stat=")
-                stats = text[1].split(">")
+                stats = str(stat).split("data-stat=")[1].split(">")
 
                 # extract the name of the stat being added
                 key = stats[0].strip('"')
 
                 # extract the number for the stat being added
-                value_text = stats[1].split("<")
-                value = value_text[0]
+                value = stats[1].split("<")[0]
 
                 # add desired stats to dict
                 if key == 'fg_per_g' or key == 'pts_per_g':

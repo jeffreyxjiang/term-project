@@ -77,7 +77,7 @@ def all_team_stat_search():
 
 def main():
     team = 'WAS'
-    stats = team_stat_search(team)
+    stats = all_team_stat_search()
 
     print(stats)
 
