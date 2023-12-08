@@ -60,20 +60,18 @@ def parse_html(html, player):
     # Add each stat to dictionary
     stats_dict = {'name': name}
     for stat in player_season_stats.find_all("td"):
-        stat = str(stat)
-        text = stat.split("data-stat=")
-        stats = text[1].split(">")
+        stats = str(stat).split("data-stat=")[1].split(">")
 
         # extract the name of the stat being added
         key = stats[0].strip('"')
 
         # extract the number for the stat being added, different for "Team" stat
         if key == 'team_id':
-            value_text = stats[1].split('teams/')[1]
-            value = value_text.split('/')[0]
+            value = stats[1].split('teams/')[1].split('/')[0]
+        elif len(stats) > 4:
+            value = stats[2].split("<")[0]
         else:
-            value_text = stats[1].split("<")
-            value = value_text[0]
+            value = stats[1].split("<")[0]
 
         stats_dict[key] = value
 
@@ -98,7 +96,7 @@ def player_stat_search(player):
 
 def main():
     # enter any player's full name here
-    guy = 'kristaps porzingis'
+    guy = 'joel embiid'
     
     stats = player_stat_search(guy)
 
