@@ -16,7 +16,7 @@ def compare():
         player2 = request.form['player2']
 
         p1_value, p2_value, p1, p2 = player_comparison(player1, player2)
-
+        p1_value, p2_value = round(p1_value, 1), round(p2_value, 1)
         return render_template('result.html', p1_name=p1, p1_value=p1_value, p2_name=p2, p2_value=p2_value)
 
 if __name__ == '__main__':
