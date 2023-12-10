@@ -96,7 +96,7 @@ def player_stat_search(player):
 
 def main():
     # enter any player's full name here
-    guy = 'joel embiid'
+    guy = input('Enter full name of player: ')
     
     stats = player_stat_search(guy)
 

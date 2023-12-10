@@ -59,7 +59,8 @@ def player_comparison(player1, player2):
     return(player1_value, player2_value, p1_name, p2_name)
 
 def main():
-    player1, player2 = 'joel embiid', 'luka doncic'
+    player1 = input('Player 1: ')
+    player2 = input('Player 2: ')
     p1_value, p2_value, p1, p2 = player_comparison(player1, player2)
     print(f"{p1}'s value is {p1_value:.1f} and {p2}'s value is {p2_value:.1f}. ")
 
